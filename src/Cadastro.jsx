@@ -13,15 +13,28 @@ export default function Cadastro() {
     setDados({ ...dados, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (dados.senha !== dados.confirmaSenha) {
-      alert("Erro crítico: As senhas não coincidem!");
-      return;
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const dados = { nome, email, senha };
+
+  try {
+    const response = await fetch('/api/cadastrar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
+    });
+
+    if (response.ok) {
+      alert("Usuário cadastrado com sucesso!");
+    } else {
+      const erro = await response.json();
+      alert("Erro: " + erro.message);
     }
-    console.log("Usuário pronto para o banco de dados:", dados);
-    alert("Cadastro validado localmente!");
-  };
+  } catch (error) {
+    alert("Erro na conexão com o servidor.");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
