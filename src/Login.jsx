@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -49,8 +50,11 @@ export default function Login() {
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">
-          Não tem conta? <a href="#" className="text-blue-500 hover:underline">Cadastre-se</a>
-        </p>
+  Não tem conta? 
+  <Link to="/cadastro" className="text-blue-500 hover:underline ml-1">
+    Cadastre-se
+  </Link>
+</p>
       </div>
     </div>
   );
