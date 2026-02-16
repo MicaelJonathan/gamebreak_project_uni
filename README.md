@@ -1,16 +1,15 @@
-# React + Vite
+# Website gamebreak em React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site feito como projeto para universidade, host pela Vercel app. 
+O site é feito em Vite, React js compiler e com base de dados em Prisma postgressql.
 
-Currently, two official plugins are available:
+Para testar funcionalidade do website acesse: https://gamebreakprojectuni.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Outras instruções.
 
-## React Compiler
+Para edições e inspeção de codigo fonte clone o repositório em alguma IDE (utilizada VSCode).
+Para testar funcionalidades somente frontend digite no terminal [npm run dev]
+Para testar funcionalidades com base de dados digite no terminal [vercel dev]
+O teste do site será hosteado em localhost do seu computador.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+################################################
