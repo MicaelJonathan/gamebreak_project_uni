@@ -42,27 +42,70 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Criar Conta</h2>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input name="nome" placeholder="Nome Completo" onChange={handleChange} className="w-full p-2 border rounded" required />
-          <input name="email" type="email" placeholder="E-mail" onChange={handleChange} className="w-full p-2 border rounded" required />
-          <input name="senha" type="password" placeholder="Senha" onChange={handleChange} className="w-full p-2 border rounded" required />
-          <input name="confirmaSenha" type="password" placeholder="Confirme a Senha" onChange={handleChange} className="w-full p-2 border rounded" required />
+  <div className="min-h-screen w-full flex flex-col items-center justify-center bg-slate-50 p-4">
+    {/* Container principal com largura de celular (max-w-md) */}
+    <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+      <div className="flex flex-col items-center mb-8">
+        <h2 className="text-3xl font-extrabold text-gray-900">Criar Conta</h2>
+        <p className="text-gray-500 mt-2 text-sm">Junte-se à nossa comunidade</p>
+      </div>
+      
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div>
+          <input 
+            name="nome" 
+            placeholder="Nome Completo" 
+            onChange={handleChange} 
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all" 
+            required 
+          />
+        </div>
+        <div>
+          <input 
+            name="email" 
+            type="email" 
+            placeholder="E-mail" 
+            onChange={handleChange} 
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all" 
+            required 
+          />
+        </div>
+        <div className="grid grid-cols-1 gap-4">
+          <input 
+            name="senha" 
+            type="password" 
+            placeholder="Senha" 
+            onChange={handleChange} 
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all" 
+            required 
+          />
+          <input 
+            name="confirmaSenha" 
+            type="password" 
+            placeholder="Confirme a Senha" 
+            onChange={handleChange} 
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all" 
+            required 
+          />
+        </div>
 
-          <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 font-semibold">
-            Finalizar Cadastro
-          </button>
-        </form>
-        <p className="mt-4 text-center text-sm text-gray-600">
-  Já tem uma conta? 
-  <Link to="/login" className="text-blue-500 hover:underline ml-1">
-    Faça Login
-  </Link>
-</p>
+        <button 
+          type="submit" 
+          className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 active:scale-[0.98] transition-all font-bold text-lg shadow-lg shadow-green-200"
+        >
+          Finalizar Cadastro
+        </button>
+      </form>
+
+      <div className="mt-8 text-center">
+        <p className="text-sm text-gray-600">
+          Já tem uma conta? 
+          <Link to="/login" className="text-green-600 font-bold hover:underline ml-1">
+            Faça Login
+          </Link>
+        </p>
       </div>
     </div>
-  );
+  </div>
+);
 }

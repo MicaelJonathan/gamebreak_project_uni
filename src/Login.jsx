@@ -33,51 +33,55 @@ export default function Login() {
   };
 
   return (
-    // h-screen força a altura da tela inteira. w-screen a largura.
-    <div className="h-screen w-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">E-mail</label>
-            <input 
-              type="email" 
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="seu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
+  <div className="h-screen w-full flex flex-col items-center justify-center bg-slate-50 p-4">
+    <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+      <div className="flex flex-col items-center mb-8">
+        <h2 className="text-3xl font-extrabold text-gray-900">Bem-vindo</h2>
+        <p className="text-gray-500 mt-2 text-sm">Acesse sua conta para continuar</p>
+      </div>
+      
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-1">
+          <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider ml-1">E-mail</label>
+          <input 
+            type="email" 
+            required
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+            placeholder="seu@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Senha</label>
-            <input 
-              type="password" 
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-              placeholder="********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+        <div className="space-y-1">
+          <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider ml-1">Senha</label>
+          <input 
+            type="password" 
+            required
+            className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+            placeholder="********"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-          <button 
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Entrar
-          </button>
-        </form>
+        <button 
+          type="submit"
+          className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all font-bold text-lg shadow-lg shadow-blue-200"
+        >
+          Entrar
+        </button>
+      </form>
 
-        <p className="mt-4 text-center text-sm text-gray-600">
-          Não tem conta? 
-          <Link to="/cadastro" className="text-blue-500 hover:underline ml-1">
-            Cadastre-se
+      <div className="mt-8 text-center">
+        <p className="text-sm text-gray-600">
+          Ainda não tem conta? 
+          <Link to="/cadastro" className="text-blue-600 font-bold hover:underline ml-1">
+            Cadastre-se grátis
           </Link>
         </p>
       </div>
     </div>
-  );
+  </div>
+);
 }
