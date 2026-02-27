@@ -1,4 +1,4 @@
-import prisma from '../lib/prisma';
+import prisma from '../lib/prisma.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -6,11 +6,12 @@ export default async function handler(req, res) {
   }
 
   const { email, senha } = req.body;
+  const emailLower = email.toLowerCase();
 
   try {
 
     const usuario = await prisma.usuario.findUnique({
-      where: { email: email },
+      where: { email: emailLower },
     });
 
     if (!usuario) {
