@@ -16,13 +16,18 @@ export default function Cadastro() {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const dados = { nome, email, senha };
+  const { nome, email, senha, confirmaSenha } = dados;
 
-  try {
+  if (senha !== confirmaSenha) {
+    alert("As senhas não coincidem!");
+    return;
+  }
+
+    try {
     const response = await fetch('/api/cadastrar', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dados),
+      body: JSON.stringify({ nome, email, senha }), // Enviando os dados extraídos
     });
 
     if (response.ok) {
