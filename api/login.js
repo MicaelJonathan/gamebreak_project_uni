@@ -23,8 +23,8 @@ export default async function handler(req, res) {
     }
 
     return res.status(200).json({ 
-      message: 'Login bem-sucedido', 
-      user: { id: usuario.id, nome: usuario.nome } 
+    message: 'Login bem-sucedido', 
+    user: { id: usuario.id, nome: usuario.nome, email: usuario.email }
     });
 
   } catch (error) {
