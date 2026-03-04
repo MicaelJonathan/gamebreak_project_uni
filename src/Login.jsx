@@ -21,6 +21,7 @@ export default function Login() {
 
       if (response.ok) {
         alert("Login realizado com sucesso!");
+        localStorage.setItem('usuarioLogado', JSON.stringify(data.user));
         navigate('/home'); // Página principal
       } else {
         // 404 error
