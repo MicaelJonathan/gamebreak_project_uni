@@ -12,17 +12,31 @@ export default function Game() {
     window.EJS_pathtodata = '/emulatorjs/data/'; 
     window.EJS_startOnLoaded = true; 
 
-    const script = document.createElement('script');
-    script.src = '/emulatorjs/data/loader.js';
-    script.async = true;
-    document.body.appendChild(script);
+    const carregarEmulador = () => {
+        if (!document.getElementById('ejs-loader')) {
+        const script = document.createElement('script');
+        script.id = 'ejs-loader';
+        script.src = '/emulatorjs/data/loader.js';
+        script.async = true;
+        document.body.appendChild(script);
+        } else {
+        if (window.EJS_emulator) {
+            window.EJS_emulator.stop();
+            // Pequeno delay para o DOM resetar, ou o emulador fica de birra.
+            setTimeout(() => window.location.reload(), 100); 
+        }
+        }
+    };
+
+    carregarEmulador();
 
     return () => {
-      if (window.EJS_emulator) {
-        window.EJS_emulator.stop();
-      }
-      document.body.removeChild(script);
-    };
+    const script = document.getElementById('ejs-loader');
+    if (script) document.body.removeChild(script);
+    delete window.EJS_player;
+    delete window.EJS_core;
+  };
+
   }, []);
 
   return (
