@@ -39,12 +39,19 @@ export default function Home() {
             </p>
             </div>
 
+            <button 
+                onClick={() => navigate('/jogar')}
+                className="w-full bg-orange-500 text-white py-3 rounded-xl font-bold mt-4 hover:bg-orange-600 shadow-lg shadow-orange-200 transition-all"
+            >
+                🎮 Iniciar Jogo (NES)
+            </button>
+
         <button 
             onClick={() => navigate('/perfil')}
             className="w-full bg-blue-50 text-blue-600 py-3 rounded-xl hover:bg-blue-100 active:scale-[0.98] transition-all font-bold text-lg border border-blue-100"
             >
             Ver Perfil
-            
+
         </button>
 
           <button 

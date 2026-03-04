@@ -3,6 +3,7 @@ import Login from './Login';
 import Cadastro from './Cadastro';
 import Home from './Home';
 import Perfil from './Perfil';
+import Game from './Game';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/home" element={<Home />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/jogar" element={<Game />} />
       </Routes>
     </BrowserRouter>
   );
