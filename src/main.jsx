@@ -1,10 +1,26 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+//src/main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './Login.jsx'
+import Cadastro from './Cadastro.jsx'
+import Home from './Home.jsx'
+import Perfil from './Perfil.jsx'
+import '../app/globals.css';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+console.log("React version:", React.version);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+<React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/perfil" element={<Perfil />} />
+        {}
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 )
