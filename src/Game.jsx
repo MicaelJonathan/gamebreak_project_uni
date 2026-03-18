@@ -5,11 +5,13 @@ export default function Game() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const host = window.location.origin;
     // Configurações Globais do EmulatorJS
     window.EJS_player = '#game-container';
     window.EJS_core = 'nes'; 
-    window.EJS_gameUrl = '/emulatorjs/roms/megaman.nes';
-    window.EJS_pathtodata = '/emulatorjs/data/'; 
+    window.EJS_gameUrl = `${host}/emulatorjs/roms/megaman.nes`;
+    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
+    //window.EJS_pathtodata = `${host}/emulatorjs/data/`;
     window.EJS_startOnLoaded = true; 
 
     const carregarEmulador = () => {
