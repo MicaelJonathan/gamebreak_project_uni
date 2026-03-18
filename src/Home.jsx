@@ -62,7 +62,7 @@ export default function Home() {
           
           {/* CARD JOGAR - DESTAQUE */}
           <button 
-            onClick={() => navigate('/jogar')}
+            onClick={() => navigate('/game')}
             className="group relative md:col-span-2 overflow-hidden bg-slate-900 border border-purple-500/30 rounded-3xl p-8 text-left transition-all hover:border-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]"
           >
             <div className="relative z-10">
