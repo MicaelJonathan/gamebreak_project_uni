@@ -9,10 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Se o cara entrar na raiz "/", mandamos para o "/login" */}
+        {/* Chuta user deslogado para "/login" */}
         <Route path="/" element={<Navigate to="/login" />} />
         
-        {/* Nossas rotas principais */}
+        {/* Rotas */}
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/home" element={<Home />} />

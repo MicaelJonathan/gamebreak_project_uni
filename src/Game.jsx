@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Game() {
-  // --- 1. HOOKS DEVEM FICAR AQUI (No topo do corpo da função) ---
   const [user, setUser] = useState(null);
   const [score, setScore] = useState('');
   const [enviando, setEnviando] = useState(false);
@@ -10,7 +9,6 @@ export default function Game() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Busca o usuário logado
     const loggedUser = localStorage.getItem('usuarioLogado');
     if (!loggedUser) {
       navigate('/login');
@@ -23,7 +21,7 @@ export default function Game() {
     window.EJS_player = '#game-container';
     window.EJS_core = 'nes'; 
     window.EJS_gameUrl = '/emulatorjs/roms/megaman.nes';
-    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/'; 
+    window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/'; //Desisti de tentar local, usei o CDN mesmo :p
     window.EJS_startOnLoaded = true; 
 
     const scriptId = 'ejs-loader';
@@ -42,7 +40,6 @@ export default function Game() {
     };
   }, [navigate]);
 
-  // --- FUNÇÃO PARA ENVIAR SCORE ---
   const enviarScore = async () => {
     if (!score) return;
     setEnviando(true);

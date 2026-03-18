@@ -25,6 +25,9 @@ dist-ssr
 .vercel
 .env*.local
 .env
+next.config.ts
+/app/page.tsx
+/app/layout.tsx
 
 /src/generated/prisma
 gamebreak_project_uni

@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Isso garante que ele olhe dentro de src
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

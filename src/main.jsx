@@ -7,6 +7,7 @@ import Cadastro from './Cadastro.jsx'
 import Home from './Home.jsx'
 import Perfil from './Perfil.jsx'
 import Game from './Game.jsx'
+import Leaderboard from './Leaderboard.jsx'
 import '../app/globals.css';
 
 console.log("React version:", React.version);
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/home" element={<Home />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
         {}
       </Routes>
     </BrowserRouter>

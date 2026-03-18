@@ -41,7 +41,6 @@ export default async function handler(req, res) {
     }
   } 
 
-  // Se tentarem outro método (PUT, DELETE, etc)
   else {
     res.setHeader('Allow', ['POST', 'GET']);
     res.status(405).end(`Method ${req.method} Not Allowed`);

@@ -107,7 +107,7 @@ export default function Perfil() {
             )}
           </div>
 
-          {/* Campo de E-mail (Somente leitura) */}
+          {/* Campo de E-mail */}
           <div className="p-5 bg-slate-800/20 rounded-2xl border border-white/5 opacity-80">
             <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">E-mail de Acesso</p>
             <p className="text-md text-slate-300 font-medium">{user.email}</p>

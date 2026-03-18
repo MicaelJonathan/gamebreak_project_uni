@@ -44,7 +44,7 @@ export default function Cadastro() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-slate-950 p-4 overflow-hidden relative font-sans">
-      {/* Luzes Neon de fundo (invertidas em relação ao login para variação) */}
+      {/* Luzes Neon de fundo */}
       <div className="absolute w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] -bottom-24 -right-24"></div>
       <div className="absolute w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[100px] -top-24 -left-24"></div>
 

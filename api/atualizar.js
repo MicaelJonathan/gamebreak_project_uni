@@ -1,6 +1,5 @@
 import prisma from '../lib/prisma.js';
 
-// Teste comentario.
 export default async function handler(req, res) {
   if (req.method !== 'PUT') {
     return res.status(405).json({ message: 'Método não permitido' });
