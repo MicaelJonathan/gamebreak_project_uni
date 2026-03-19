@@ -43,7 +43,6 @@ export default function Game() {
   const enviarScore = async () => {
     if (!score) return;
     setEnviando(true);
-    score = parseInt(score); 
     if (score > 9999999) {
       score = 9999999; // Limite de pontuação.
     }
@@ -54,7 +53,7 @@ export default function Game() {
         body: JSON.stringify({ 
           usuario_id: user.id, 
           nome: user.nome, 
-          pontuacao: score
+          pontuacao: parseInt(score)
         }),
       });
 
