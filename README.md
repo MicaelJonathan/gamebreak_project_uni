@@ -10,6 +10,7 @@ Para testar funcionalidade do website acesse: https://gamebreakprojectuni.vercel
 Para edições e inspeção de codigo fonte clone o repositório em alguma IDE (utilizada VSCode).
 Para testar funcionalidades somente frontend digite no terminal [npm run dev]
 Para testar funcionalidades com base de dados digite no terminal [vercel dev]
+Para testar vitest digite [npm run test]
 O teste do site será hosteado em localhost do seu computador.
 
 ################################################
