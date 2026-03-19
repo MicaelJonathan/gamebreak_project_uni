@@ -43,6 +43,10 @@ export default function Game() {
   const enviarScore = async () => {
     if (!score) return;
     setEnviando(true);
+    score = parseInt(score); 
+    if (score > 9999999) {
+      score = 9999999; // Limite de pontuação.
+    }
     try {
       const response = await fetch('/api/leaderboard', {
         method: 'POST',
@@ -50,7 +54,7 @@ export default function Game() {
         body: JSON.stringify({ 
           usuario_id: user.id, 
           nome: user.nome, 
-          pontuacao: parseInt(score) 
+          pontuacao: score
         }),
       });
 
@@ -58,6 +62,7 @@ export default function Game() {
         alert("🏆 RANKING ATUALIZADO!");
         setShowModal(false);
         setScore('');
+        navigate('/leaderboard');
       }
     } catch (error) {
       alert("Erro na conexão.");

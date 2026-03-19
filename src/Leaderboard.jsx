@@ -93,7 +93,7 @@ export default function Leaderboard() {
         {/* Call to Action */}
         <div className="mt-12 text-center">
           <button 
-            onClick={() => navigate('/jogar')}
+            onClick={() => navigate('/game')}
             className="bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-purple-500 hover:text-white transition-all shadow-xl"
           >
             Superar Recorde
